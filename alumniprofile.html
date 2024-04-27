@@ -1,0 +1,62 @@
+<!-- alumni_profile.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Profile</title>
+    <link rel="stylesheet" href="/stylesheet/styles.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100">
+
+    <nav class="bg-gray-800 p-4">
+        <div class="container mx-auto">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <img src="C:\Users\hp\Music\project images 1\logo.png" alt='Logo' class='w-16 h-16 mr-2 rounded-full shadow-lg'/>
+                    
+                    <div class="text-white text-3xl font-bold">Connect</div>
+                </div>
+                <ul class="flex space-x-4">
+                    <li>
+                        <a href="#" class="text-white hover:underline">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white hover:underline">About</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white hover:underline">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/meetings">Meetings</a>
+            <a href="/polls">Polls</a>
+            <a href="/logout">Logout</a>
+        </nav>
+    </header>
+    <main>
+        <div class="alumni-profile">
+            <h1>Alumni Profile</h1>
+            <div class="profile-picture">
+                <img src="/images/uploads/<%= alumni.profile %>" alt="Profile Picture">
+            </div>
+            <div class="profile-details">
+                <h2>Name: <%= alumni.name %></h2>
+                <p>Company: <%= alumni.company %></p>
+                <p>Designation: <%= alumni.designation %></p>
+                <!-- Add more profile details as needed -->
+            </div>
+        </div>
+    </main>
+    <footer>
+        <!-- Footer content here -->
+    </footer>
+</body>
+</html>

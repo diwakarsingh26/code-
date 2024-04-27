@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Meeting</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100">
+
+    <nav class="bg-gray-800 p-4">
+        <div class="container mx-auto">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <img src="C:\Users\hp\Music\project images 1\logo.png" alt='Logo' class='w-16 h-16 mr-2 rounded-full shadow-lg'/>
+                    <div class="text-white text-3xl font-bold">Connect</div>
+                </div>
+                <ul class="flex space-x-4">
+                    <li>
+                        <a href="#" class="text-white hover:underline">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white hover:underline">About</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white hover:underline">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<div class="container mx-auto py-8">
+    <!-- Centering the heading -->
+    <div class="flex justify-center">
+        <h1 class="text-3xl font-bold mb-4 text-center">Edit Meeting</h1>
+    </div>
+
+    <!-- Edit meeting form -->
+    <form action="/edit-meeting/<%= meeting._id %>" method="POST" class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <div class="mb-4">
+            <label for="title" class="block text-gray-700 font-bold mb-2">Title</label>
+            <input type="text" id="title" name="title" value="<%= meeting.title %>" class="w-full border rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500">
+        </div>
+        <div class="mb-4">
+            <label for="date" class="block text-gray-700 font-bold mb-2">Date</label>
+            <input type="date" id="date" name="date" value="<%= meeting.date %>" class="w-full border rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500">
+        </div>
+        <div class="mb-4">
+            <label for="time" class="block text-gray-700 font-bold mb-2">Time</label>
+            <input type="time" id="time" name="time" value="<%= meeting.time %>" class="w-full border rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500">
+        </div>
+        <div class="mb-4">
+            <label for="link" class="block text-gray-700 font-bold mb-2">Link</label>
+            <input type="text" id="link" name="link" value="<%= meeting.link %>" class="w-full border rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500">
+        </div>
+        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg">Save</button>
+    </form>
+</div>
+</body>
+</html>

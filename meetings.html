@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Meetings</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- Include your custom CSS file here -->
+</head>
+<body class="bg-gray-100">
+
+<nav class="bg-gray-800 p-4">
+    <div class="container mx-auto">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="C:\Users\hp\Music\project images 1\logo.png" alt="Logo" class="w-16 h-16 mr-2 rounded-full shadow-lg"/>
+                <div class="text-white text-3xl font-bold">Connect</div>
+            </div>
+            <ul class="flex space-x-4">
+                <li>
+                    <a href="#" class="text-white hover:underline">Home</a>
+                </li>
+                <li>
+                    <a href="#" class="text-white hover:underline">About</a>
+                </li>
+                <li>
+                    <a href="#" class="text-white hover:underline">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mx-auto py-8 pl-6 relative"> <!-- Added padding-left with pl-6 -->
+    <h1 class="text-3xl font-bold mb-4">All Meetings</h1>
+
+    <!-- Iterate over meetings array -->
+    <% meetings.forEach(meeting => { %>
+        <div class="bg-white rounded-lg shadow-lg mb-4">
+            <div class="p-6">
+                <h4 class="text-xl font-semibold mb-2"><%= meeting.title %></h4>
+                <p class="text-gray-600 mb-2">Date: <%= meeting.date %></p>
+                <p class="text-gray-600 mb-2">Time: <%= meeting.time %></p>
+                <!-- Use anchor tag for link -->
+                <p class="text-blue-500 mb-2">Link: <a href="<%= meeting.link %>" target="_blank"><%= meeting.link %></a></p>
+            </div>
+        </div>
+    <% }) %>
+
+    <!-- Buttons container -->
+    <div class="absolute top-0 right-0 mt-4 mr-4">
+        <!-- New meeting button -->
+        <a href="/new-meeting" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-full shadow-lg mr-2">New Meeting</a>
+
+        <!-- My Meets button -->
+        <a href="/mymeet" class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-full shadow-lg">My Meets</a>
+    </div>
+</div>
+
+</body>
+</html>
